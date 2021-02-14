@@ -5,6 +5,12 @@ const searchSong = async() => {
      displaySong(data.data);
 };
 
+document.getElementById('searchSong').addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    document.getElementById('searchBtn').click();
+  }
+})
+
 const displaySong = (songs) => {
   songContainer.innerText = "";
   songs.forEach((song) => {
